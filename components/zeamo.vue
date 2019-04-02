@@ -21,7 +21,7 @@
         </b-col>
       </b-row>
     </div>
-    <div class="body">
+    <div class="bodycontent">
       <div class="bodyimage">
         <img src="../assets/zeamo/map.jpg" class="mapimage">
       </div>
