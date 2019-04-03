@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-   <Filtergyms/>
+   <Gymdetail/>
   </div>
 </template>
 
 <script>
-import Filtergyms from './components/filtergyms.vue'
+import Gymdetail from './components/gymdetail.vue'
 
 export default {
   name: 'app',
   components: {
-    Filtergyms
+    Gymdetail
   }
 }
 </script>

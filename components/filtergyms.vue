@@ -194,14 +194,6 @@ body {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
-.imgss {
-  margin-left: 7%;
-  height: 25px;
-}
-.imgsd {
-  margin-left: 10%;
-  height: 20px;
-}
 .apply {
   color: #4877f9;
   text-align: right;
