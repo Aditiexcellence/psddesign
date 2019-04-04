@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="zeamomargin">
     <div class="wrapper">
       <nav id="sidebar" :class="{'active': canShowmenu}">
         <ul class="list-unstyled components">
@@ -13,17 +13,16 @@
       </nav>
       <div id="content">
         <div class="header">
-          <b-row class="headertop">
-            <b-col lg="9" col sm="6" md="8" class="col-2"></b-col>
-            <b-col lg="3" col sm="6" md="4" class="col-10 headerimage">
+          <div class="headertop">
+            <div class="headerimage">
               <img src="../assets/zeamo/arrow.jpg" class="imd">
               <img src="../assets/zeamo/tower.jpg" class="imd">
-              <img src="../assets/zeamo/battery.jpg" class="imgs">
+              <img src="../assets/zeamo/battery.jpg" class="topheaderimage">
               <img src="../assets/zeamo/time.jpg" class="imgs">
-            </b-col>
-          </b-row>
-          <b-row class="bottomheader">
-            <b-col lg="8" col sm="1" md="8" class="col-8 left">
+            </div>
+          </div>
+          <div class="bottomheader">
+            <div class="left">
               <button
                 type="button"
                 id="sidebarCollapse"
@@ -33,12 +32,12 @@
                 <img src="../assets/zeamo/menu.jpg" class="imgss">
               </button>
               <img src="../assets/zeamo/zeamo.jpg" class="imgss">
-            </b-col>
-            <b-col lg="4" col sm="11" md="4" class="col-4 right">
-              <img src="../assets/zeamo/option.jpg" class="imgsd">
-              <img src="../assets/zeamo/search.jpg" class="imgsd">
-            </b-col>
-          </b-row>
+              <div class="right">
+                <img src="../assets/zeamo/option.jpg" class="optionimage">
+                <img src="../assets/zeamo/search.jpg" class="imgsd">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="bodycontent">
           <div class="bodyimage">
@@ -88,24 +87,23 @@ export default {
 </script>
 
 <style>
-body {
-  margin-bottom: 4%;
-  margin: 2%;
+.zeamomargin {
+  margin: 4% 4% 10% 4%;
 }
 .header {
   background-color: #162233;
 }
-.imgs {
+.topheaderimage {
   height: 15px;
-  margin-left: 7%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .imd {
   height: 15px;
 }
 .headerimage {
   float: right;
-  display: inline-flex;
-  padding-left: 13%;
+  padding-right: 2%;
 }
 .headertop {
   padding-top: 0.5%;
@@ -117,15 +115,16 @@ body {
   margin-left: 7%;
   height: 25px;
 }
+.optionimage {
+  height: 20px;
+  padding-right: 28%;
+}
 .imgsd {
-  margin-left: 10%;
   height: 20px;
 }
 .bottomheader {
   width: 100%;
-  display: flex;
-  margin: auto;
-  margin-top: 3%;
+  margin-top: 4%;
   padding-bottom: 3%;
   margin-left: 0px;
   margin-right: 0px;
@@ -136,11 +135,9 @@ body {
   margin-left: 4%;
 }
 .right {
-  display: flex;
-  padding-left: 22%;
-}
-.left {
-  display: flex;
+  float: right;
+  margin-right: 4%;
+  width: 70px;
 }
 .bodyimage {
   height: 400px;
@@ -187,14 +184,8 @@ li a:hover {
     margin-left: -211px;
     margin-right: 6%;
   }
-  .headerimage {
-    padding-left: 16%;
-  }
 }
 @media only screen and (max-width: 425px) {
-  .headerimage {
-    padding-left: 42%;
-  }
   #sidebar.active {
     margin-left: -211px;
     margin-right: 12%;
@@ -205,23 +196,17 @@ li a:hover {
   .bodyimage {
     height: 200px;
   }
-  .right {
-    padding-left: 11%;
-  }
   .imgss {
     margin-left: 7%;
     height: 17px;
     margin-top: auto;
     margin-bottom: auto;
   }
+  .bottomheader {
+    margin-top: 8%;
+  }
 }
 @media only screen and (max-width: 320px) {
-  .right {
-    padding-left: 0;
-  }
-  .headerimage {
-    padding-left: 32%;
-  }
   .gyma {
     height: 100px;
   }

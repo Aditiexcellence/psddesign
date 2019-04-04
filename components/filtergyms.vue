@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div class="filtermargin">
     <div class="header">
-      <b-row class="topheader">
-        <b-col lg="9" col sm="6" md="8"></b-col>
-        <b-col lg="3" col sm="6" md="4" class="image">
-          <img src="../assets/filtergyms/wifi.jpg" class="imd">
-          <img src="../assets/filtergyms/tower.jpg" class="imd">
-          <img src="../assets/filtergyms/battery.jpg" class="imgs">
-          <img src="../assets/filtergyms/time.jpg" class="imgs">
-        </b-col>
-      </b-row>
+      <div class="headertop">
+        <div class="headerimage">
+          <img src="../assets/zeamo/arrow.jpg" class="imd">
+          <img src="../assets/zeamo/tower.jpg" class="imd">
+          <img src="../assets/zeamo/battery.jpg" class="topheaderimage">
+          <img src="../assets/zeamo/time.jpg" class="imgs">
+        </div>
+      </div>
       <b-row class="headerbottom">
         <b-col lg="8" col sm="1" md="8" class="lefttext">
           <i class="fas fa-times icon" @click="back"></i>
@@ -187,9 +186,8 @@ export default {
 </script>
 
 <style>
-body {
-  margin-bottom: 4%;
-  margin: 2%;
+.filtermargin {
+  margin: 4% 4% 15% 4%;
 }
 .header {
   background-color: #162233;
@@ -197,7 +195,6 @@ body {
 }
 .imgs {
   height: 15px;
-  margin-left: 7%;
 }
 .imd {
   height: 15px;
@@ -216,6 +213,7 @@ body {
   color: #4877f9;
   text-align: right;
   font-size: 20px;
+  padding-right: 3%;
 }
 .headerbottom {
   width: 100%;
@@ -230,7 +228,7 @@ body {
   display: flex;
 }
 .icon {
-  margin-left: 3%;
+  margin-left: 4%;
   margin-top: auto;
   margin-bottom: auto;
   color: blue;
@@ -308,15 +306,19 @@ body {
   .image {
     padding-left: 38%;
   }
+  .lefttext {
+    font-size: 21px;
+  }
+  .apply {
+    font-size: 15px;
+  }
 }
 @media only screen and (max-width: 320px) {
   .h3heading {
     font-size: 17px;
   }
   .lefttext {
-    display: flex;
-    font-size: 19px;
-    font-family: dejavu sans;
+    font-size: 18px;
   }
   .custom-control-label {
     margin-left: 20%;
@@ -326,9 +328,6 @@ body {
     font-size: 10px;
     margin-top: 3%;
     padding-left: 9%;
-  }
-  .apply {
-    font-size: 15px;
   }
 }
 </style>

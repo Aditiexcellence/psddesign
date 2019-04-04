@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div class="gymmargin">
     <div class="header">
-      <b-row class="tophead">
-        <b-col lg="9" col sm="6" md="8"></b-col>
-        <b-col lg="3" col sm="6" md="4" class="topimage">
-          <img src="../assets/gymdetail/wifi.jpg" class="imd">
-          <img src="../assets/gymdetail/tower.jpg" class="imd">
-          <img src="../assets/gymdetail/battery.jpg" class="imgs">
-          <img src="../assets/gymdetail/time.jpg" class="imgs">
-        </b-col>
-      </b-row>
+      <div class="headertop">
+        <div class="headerimage">
+          <img src="../assets/zeamo/arrow.jpg" class="imd">
+          <img src="../assets/zeamo/tower.jpg" class="imd">
+          <img src="../assets/zeamo/battery.jpg" class="topheaderimage">
+          <img src="../assets/zeamo/time.jpg" class="imgs">
+        </div>
+      </div>
       <b-row class="headerbottom">
         <b-col lg="8" col sm="1" md="8" class="textleft">
           <i class="fas fa-arrow-left arrowicon" v-on:click="rootpage"></i>
@@ -214,13 +213,15 @@ export default {
 </script>
 
 <style>
+.gymmargin {
+  margin: 4% 4% 60% 4%;
+}
 .header {
   background-color: #162233;
   color: white;
 }
 .imgs {
   height: 15px;
-  margin-left: 7%;
 }
 .imd {
   height: 15px;
@@ -294,6 +295,7 @@ export default {
 .arrowicon {
   color: #4877f9;
   margin-top: 1%;
+  margin-left: 4%;
 }
 .icons {
   float: right;
