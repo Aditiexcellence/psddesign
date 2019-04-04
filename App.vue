@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-   <Gymdetail/>
+   <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Gymdetail from './components/gymdetail.vue'
 
 export default {
   name: 'app',
-  components: {
-    Gymdetail
-  }
 }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="header">
-      <b-row class="topheader">
+      <b-row class="tophead">
         <b-col lg="9" col sm="6" md="8"></b-col>
-        <b-col lg="3" col sm="6" md="4" class="image">
+        <b-col lg="3" col sm="6" md="4" class="topimage">
           <img src="../assets/gymdetail/wifi.jpg" class="imd">
           <img src="../assets/gymdetail/tower.jpg" class="imd">
           <img src="../assets/gymdetail/battery.jpg" class="imgs">
@@ -11,8 +11,8 @@
         </b-col>
       </b-row>
       <b-row class="headerbottom">
-        <b-col lg="8" col sm="1" md="8" class="lefttext">
-          <i class="fas fa-arrow-left arrowicon"></i>
+        <b-col lg="8" col sm="1" md="8" class="textleft">
+          <i class="fas fa-arrow-left arrowicon" v-on:click="rootpage"></i>
           <div class="text">Friars Pilates Studio</div>
         </b-col>
       </b-row>
@@ -27,7 +27,7 @@
       <div class="map">
         <img src="../assets/gymdetail/map.jpg" class="gymimage">
       </div>
-      <b-container class="data">
+      <b-container class="gymdata">
         <div class="heading">Schedule</div>
         <div class="content">
           <b-row class="margin">
@@ -95,39 +95,14 @@
         </div>
         <div class="content">
           <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Gym</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Pilates</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Tennis</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Swimming</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Fencing</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Personal Training</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Yoga</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Squash</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Cycling</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Spinning</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Zumba</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Martial Arts</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Kickboxing</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Physiotherapy</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Basketball</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Boot Camp</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Barre</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Soccer</b-col>
-          </b-row>
-          <b-row>
-            <b-col lg="4" sm="4" md="4" class="col-4">Dancing</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4">Rock Climbing</b-col>
-            <b-col lg="4" sm="4" md="4" class="col-4"></b-col>
+            <b-col
+              lg="4"
+              sm="4"
+              md="4"
+              class="col-4"
+              v-for="data in activitynames"
+              :key="data.id"
+            >{{data.name}}</b-col>
           </b-row>
         </div>
         <div class="heading">Photos</div>
@@ -143,7 +118,98 @@
 <script>
 import { mdbInput } from "mdbvue";
 export default {
-  name: "Gymdetail"
+  name: "Gymdetail",
+  data() {
+    return {
+      activitynames: [
+        {
+          name: "Gym",
+          id: 1
+        },
+        {
+          name: "Pilates",
+          id: 2
+        },
+        {
+          name: "Tennis",
+          id: 3
+        },
+        {
+          name: "Swimming",
+          id: 4
+        },
+        {
+          name: "Fencing",
+          id: 5
+        },
+        {
+          name: "Personal Training",
+          id: 6
+        },
+        {
+          name: "Yoga",
+          id: 7
+        },
+        {
+          name: "Squash",
+          id: 8
+        },
+        {
+          name: "Cycling",
+          id: 9
+        },
+        {
+          name: "Spinning",
+          id: 10
+        },
+        {
+          name: "Zumba",
+          id: 11
+        },
+        {
+          name: "Martial Arts",
+          id: 12
+        },
+        {
+          name: "Kickboxing",
+          id: 13
+        },
+        {
+          name: "Physiotherapy",
+          id: 14
+        },
+        {
+          name: "Basketball",
+          id: 15
+        },
+        {
+          name: "Boot Camp",
+          id: 16
+        },
+        {
+          name: "Barre",
+          id: 17
+        },
+        {
+          name: "Soccer",
+          id: 18
+        },
+        {
+          name: "Dancing",
+          id: 19
+        },
+        {
+          name: "Rock Climbing",
+          id: 20
+        }
+      ]
+    };
+  },
+  methods: {
+    rootpage: function() {
+      this.$router.push("/");
+    }
+  }
 };
 </script>
 
@@ -159,40 +225,37 @@ export default {
 .imd {
   height: 15px;
 }
-.image {
+.topimage {
   float: right;
   display: inline-flex;
-  padding-left: 15% !important;
+  padding-left: 14%;
 }
-.topheader {
+.tophead {
   padding-top: 0.5%;
   width: 100%;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .headerbottom {
   width: 100%;
   margin-top: 3%;
   padding-bottom: 2%;
 }
-.lefttext {
+.textleft {
   display: flex;
   font-size: 30px;
   font-family: dejavu sans;
-  margin-left: 3%;
 }
 .text {
-  margin-left: 3% !important;
+  margin-left: 3%;
 }
 .gymimage {
   width: 100%;
 }
-.data {
+.gymdata {
   background-color: #162233;
   color: white;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  max-width: 100% !important;
+  max-width: 100%;
 }
 .content {
   color: grey;
@@ -203,7 +266,7 @@ export default {
   color: white;
 }
 .margin {
-  margin-left: 0px !important;
+  margin-left: 0px;
 }
 .heading {
   border-bottom: 2px solid grey;
@@ -248,29 +311,12 @@ export default {
   padding-bottom: 2%;
   font-size: 30px;
 }
-@media only screen and (max-width: 320px) {
-  .lefttext {
-    font-size: 16px !important;
-  }
-  .heading {
-    font-size: 14px !important;
-  }
-  .content {
-    font-size: 9.9px !important;
-  }
-  .position {
-    top: 5px !important;
-  }
-  .purchase {
-    font-size: 13px !important;
-  }
-}
 @media only screen and (max-width: 425px) {
-  .lefttext {
+  .textleft {
     font-size: 18px;
   }
-  .image {
-    padding-left: 45% !important;
+  .topimage {
+    padding-left: 45%;
   }
   .heading {
     border-bottom: 2px solid grey;
@@ -287,6 +333,23 @@ export default {
   }
   .purchase {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .textleft {
+    font-size: 16px;
+  }
+  .heading {
+    font-size: 14px;
+  }
+  .content {
+    font-size: 9.9px;
+  }
+  .position {
+    top: 5px;
+  }
+  .purchase {
+    font-size: 13px;
   }
 }
 </style>
